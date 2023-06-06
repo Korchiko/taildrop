@@ -7,7 +7,7 @@ function App() {
 
       
       <h2>Serdal</h2>
-=========
+
       <h1 className='text-red-400 bg-fuchsia-500'>Bay Pala</h1>
 
     </div>

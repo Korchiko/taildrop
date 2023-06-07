@@ -10,34 +10,47 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+  
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="root">
+      <div class="h-screen w-full overflow-hidden flex flex-nowrap text-center" id="slider">
+        <div class="bg-blue-600 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center">
+            <h2 class="text-4xl max-w-md">Your Big Ideia</h2>
+            <p class="max-w-md">It's fast, flexible, and reliable — with zero-runtime.</p>
+        </div>
+        <div class="bg-pink-400 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center">
+            <h2 class="text-4xl max-w-md">Tailwind CSS works by scanning all of your HTML</h2>
+            <p class="max-w-md">It's fast, flexible, and reliable — with zero-runtime.</p>
+        </div>
+        <div class="bg-teal-500 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center">
+            <h2 class="text-4xl max-w-md">React, Vue, and HTML</h2>
+            <p class="max-w-md">Accessible, interactive examples for React and Vue powered by Headless UI, plus vanilla HTML if you’d rather write any necessary JS yourself.</p>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.querySelector('#slider');
+        setTimeout(function moveSlide() {
+            const max = slider.scrollWidth - slider.clientWidth;
+            const left = slider.clientWidth;
+    
+            if (max === slider.scrollLeft) {
+                slider.scrollTo({left: 0, behavior: 'smooth'})
+            } else {
+                slider.scrollBy({left, behavior: 'smooth'})
+            }
+    
+            setTimeout(moveSlide, 2000)
+        }, 2000)
+    
+    })
+    </script>
+    </div>
+    
   </body>
 </html>

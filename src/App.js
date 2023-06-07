@@ -1,15 +1,18 @@
-
-import './App.css';
+import "./App.css";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import Content from "./Components/Content";
+import Profile from "./Components/Profile";
+import Picture from "./Components/Picture";
 
 function App() {
   return (
-    <div className="App">
-
-      
-      <h2>Serdal</h2>
-
-      <h1 className='text-red-400 bg-fuchsia-500'>Bay Pala</h1>
-
+    <div>
+      <Header />
+      <Content />
+      <Picture />
+      <Profile />
+      <Footer />
     </div>
   );
 }

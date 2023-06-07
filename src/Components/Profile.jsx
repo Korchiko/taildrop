@@ -9,19 +9,19 @@ import {
  
 export default function Example() {
   return (
-    <Card className="w-96   ">
-      <CardHeader floated={false} className="h-80">
-        <img src="/img/team-3.jpg" alt="profile-picture" />
+    <Card className="w-96 m-auto  ">
+      <CardHeader floated={false} className="h-80 ">
+        <img src="https://st2.depositphotos.com/47577860/47003/v/450/depositphotos_470031302-stock-illustration-man-occupation-trainee-icon-solid.jpg" alt="profile-picture" />
       </CardHeader>
       <CardBody className="text-center">
-        <Typography variant="h4" color="blue-gray" className="mb-2">
+        <Typography variant="h4" color="blue-gray" className="mb-4">
           Sadun Yalçın
         </Typography>
         <Typography color="blue" className="font-medium" textGradient>
           Operatör Doktor
         </Typography>
       </CardBody>
-      <CardFooter className="flex justify-center gap-7 pt-2">
+      <CardFooter className="flex justify-end gap-7 pt-4">
         <Tooltip content="Like">
           <Typography
             as="a"

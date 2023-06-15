@@ -27,7 +27,7 @@ function App() {
       }else{
         setCurrentIndex(currentIndex+1)
       } 
-    },2000)
+    },3000)
     return ()=> clearTimeout(timer)
 
   }) 

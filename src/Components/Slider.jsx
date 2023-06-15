@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
@@ -19,7 +19,18 @@ function App() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(()=>{
+    const timer = setTimeout(()=>{
+      if(currentIndex===3){
+        setCurrentIndex(0)
+      
+      }else{
+        setCurrentIndex(currentIndex+1)
+      } 
+    },2000)
+    return ()=> clearTimeout(timer)
 
+  }) 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -52,7 +63,7 @@ function App() {
       </div>
       <div className="flex top-4 justify-center py-2">
         {slides.map((slide, slideIndex) => (
-          <div key={slideIndex} onClick={()=>goToSlide(slideIndex)} className="text-2xl cursor-pointer">
+          <div key={slideIndex} onClick={()=>goToSlide(slideIndex)} className="text-2xl cursor-pointer text-gray-500">
             <RxDotFilled />
           </div>
         ))}

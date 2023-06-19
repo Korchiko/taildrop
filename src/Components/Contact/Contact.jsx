@@ -8,7 +8,7 @@ const Contact = () => {
     <>
     <div onMouseLeave={() => setMouseEvent(false)} onMouseEnter={() => setMouseEvent(true)} style={{cursor:"pointer"}}>Contact</div>
     {mouseEvent && <div>
-        Component geldi
+        Component 
         </div>}
     </>
   )

@@ -17,7 +17,7 @@ function NavList() {
         className="p-5 font-medium"
       >
         <a href="#" className=" flex items-center hover:text-blue-500 transition-colors">
-          Ana Sayfa
+          Ana Sayfases
         </a>
       </Typography>
       <Typography

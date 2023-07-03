@@ -1,4 +1,7 @@
 import React from "react";
+import { Fragment } from 'react'
+
+import {Routes,Route,Link,NavLink,Outlet} from "react-router-dom"
 import logo from '../images/new.png'
 import {
   Navbar,
@@ -8,6 +11,7 @@ import {
   IconButton,
   
 } from "@material-tailwind/react";
+
  
 export default function Example() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -20,88 +24,97 @@ export default function Example() {
   }, []);
  
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-12">
-      <Typography
+    <ul className="mx-48 flex flex-col gap-2 lg:mb-0 lg:mt-2 lg:flex-row lg:items-center lg:gap-12">
+      <nav
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        
       >
-        <a href="#" className="flex items-center">
+        <NavLink to="/" className="flex  hover:text-green-700 font-bold items-center">
           Ana Sayfa
-        </a>
-      </Typography>
-      <Typography
+        </NavLink>
+      </nav>
+      <nav
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+      
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex font-bold hover:text-green-700  items-center">
           Op.Dr.Sadun Yalçın
         </a>
-      </Typography>
+      </nav>
       
-      <Typography
+      <nav
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex font-bold hover:text-green-700 items-center">
           Hastalıklar
         </a>
-      </Typography>
-      <Typography
+      </nav>
+      <nav
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex font-bold hover:text-green-700 items-center">
           Tanı Yöntemleri
         </a>
-      </Typography>
-      <Typography
+      </nav>
+      <nav
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex font-bold hover:text-green-700 items-center">
           Tedaviler
         </a>
-      </Typography>
-      <Typography
+      </nav>
+      <nav
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex font-bold hover:text-green-700 items-center">
           Kliniğimiz
         </a>
-      </Typography>
-      <Typography
+      </nav>
+      <nav
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex font-bold hover:text-green-700 items-center">
           Hastalar İçin +
         </a>
-      </Typography>
-      <Typography
+      </nav>
+      <nav
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          İletişim
-        </a>
-      </Typography>
+       
+         
+        
+          
+         <Fragment>
+      
+          <Link to="/shop" className="flex font-bold  hover:text-green-700 items-center">
+            İletişim
+          </Link>
+        
+      
+      <Outlet />
+    </Fragment>
+          
+       
+
+        
+        
+      </nav>
     </ul>
   );
  
@@ -113,20 +126,14 @@ export default function Example() {
         as="li"
         variant="small"
         color="blue-gray"
-        className=" relative bottom-16  p-6  font-normal  h-2  w-48 "
+        className=" relative left-40 bottom-16  p-6  font-normal  h-2  w-48 "
       >
         <a href="#" >
           <img  src={logo} alt="SY"></img>
           
         </a>
       </Typography>
-          <Typography
-            as="a"
-            href="#"
-            className="mr-2 cursor-pointer py-1.5 font-medium"
-          >
-            Op.Dr.Sadun Yalçın
-          </Typography>
+          
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             

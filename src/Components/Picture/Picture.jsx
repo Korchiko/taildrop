@@ -13,7 +13,7 @@ import {
             <div>
       <Card className="mt-0 w-96">
         <button className="hover:opacity-100 opacity-75">
-        <CardHeader color="blue-gray" className="relative h-56">
+        <CardHeader color="light-green" className="relative h-56">
           <img src="https://images.unsplash.com/photo-1530695440407-21fef47230b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmV0aW5hJTIwZXllfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="img-blur-shadow" layout="fill" />
         
         </CardHeader>
@@ -30,7 +30,7 @@ import {
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button>Read More</Button>
+          <Button className="bg-light-green-800">Read More</Button>
         </CardFooter>
         
       </Card>
@@ -38,7 +38,7 @@ import {
       <div>
       <Card className="mt-0 w-96">
       <button className="hover:opacity-100 opacity-75">
-        <CardHeader color="blue-gray" className="relative h-56">
+        <CardHeader color="light-green" className="relative h-56">
           <img src="https://plus.unsplash.com/premium_photo-1661607420592-c2c013e1d89e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="img-blur-shadow" layout="flex" />
         </CardHeader>
         </button>
@@ -54,7 +54,7 @@ import {
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button>Read More</Button>
+          <Button className="bg-light-green-800">Read More</Button>
         </CardFooter>
         
       </Card>
@@ -62,7 +62,7 @@ import {
       <div>
       <Card className="mt-0 w-96">
       <button className="hover:opacity-100 opacity-75">
-        <CardHeader color="blue-gray" className="relative h-56">
+      <CardHeader color="light-green" className="relative h-56">
           <img src="https://images.unsplash.com/photo-1521336993297-77c615af0169?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk1fHxyZXRpbmElMjBleWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="img-blur-shadow" layout="fill" />
         </CardHeader>
         </button>
@@ -78,7 +78,7 @@ import {
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button>Read More</Button>
+          <Button className="bg-light-green-800">Read More</Button>
         </CardFooter>
         
       </Card>

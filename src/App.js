@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./Components/Header/Header";
+import Header from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Slider from "./Components/Slider/Slider";

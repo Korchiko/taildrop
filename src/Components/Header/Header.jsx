@@ -1,7 +1,7 @@
 import React from "react";
 import { Fragment } from 'react'
 
-import {Routes,Route,Link,NavLink,Outlet} from "react-router-dom"
+import {Link,NavLink,Outlet} from "react-router-dom"
 import logo from '../images/new.png'
 import {
   Navbar,
@@ -102,7 +102,7 @@ export default function Example() {
           
          <Fragment>
       
-          <Link to="/shop" className="flex font-bold  hover:text-green-700 items-center">
+          <Link to="/contact" className="flex font-bold  hover:text-green-700 items-center">
             İletişim
           </Link>
         

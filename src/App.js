@@ -1,27 +1,19 @@
+import "./App.css";
+import Header from "./Components/Header/Header";
+import Home from "./Components/Home/Home";
+import { Route, Routes } from "react-router-dom";
+import Slider from "./Components/Slider/Slider";
 
-import './App.css';
-import Footer from './Components/Footer/Footer';
-import Slider from './Components/Slider/Slider'
-import Header from './Components/Header/Header'
-import Second from './Components/Second/Second'
-import Profile from './Components/Profile/Profile'
-import Picture from './Components/Picture/Picture'
-import Fatal from './Components/Fatal/Fatal'
-
-
-
+// 3 TEMEL BİLEŞEN VAR. <BrowserRouter,  Route ve Link>
 
 function App() {
   return (
     <div>
-    <Header/>
-    <Slider/>
-    <Picture/>
-    <Second/>
-    <Profile/>
-    <Fatal/>
-    <Footer/>
-  
+      <Header />
+      <Routes>
+        <Route path="/" Component={Home}></Route>
+        <Route path="/Contact" Component={Slider}></Route>
+      </Routes>
     </div>
   );
 }

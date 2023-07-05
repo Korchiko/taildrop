@@ -3,7 +3,12 @@ import { Typography } from "@material-tailwind/react";
 const LINKS = [
   {
     title: "Hastalıklar",
-    items: ["Sarı Nokta Hastalığı", "Diabetik Retinopati", "Retina Dekolmanı", "Gece Körlüğüne Bağlı Makula Ödemi"],
+    items: [
+      "Sarı Nokta Hastalığı",
+      "Diabetik Retinopati",
+      "Retina Dekolmanı",
+      "Gece Körlüğüne Bağlı Makula Ödemi",
+    ],
   },
   {
     title: "Tedaviler",
@@ -19,23 +24,27 @@ const currentYear = new Date().getFullYear();
 
 export default function Example() {
   return (
-    <footer className="relative w-full mt-12">
+    <footer className="relative w-full mt-12 pt-4 bg-blue-gray-50">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-          <Typography  className="mb-6">
-            <p className="text-green-800 font-bold mt-6">Hakkımızda</p>
-            <p className="mt-6 w-96 font-medium">
-              Her daim hastaların ve hasta yakınlarının yanında duran güler
-              yüzlü, anlayışlı ve nitelikli profesyonel kadromuz ile sağlık
-              alanında farklı ve güvenilir hizmet anlayışını benimsiyoruz.
-            </p>
-          </Typography>
+          <div className="flex flex-wrap justify-center items-center">
+            <div className="max-w-md mx-auto px-4">
+              <p className="text-green-800 font-bold mt-6 text-lg">
+                Hakkımızda
+              </p>
+              <p className="mt-6 max-w-xs sm:max-w-sm md:max-w-md text-lg font-light">
+                Her daim hastaların ve hasta yakınlarının yanında duran güler
+                yüzlü, anlayışlı ve nitelikli profesyonel kadromuz ile sağlık
+                alanında farklı ve güvenilir hizmet anlayışını benimsiyoruz.
+              </p>
+            </div>
+          </div>
+
           <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (
               <ul key={title}>
                 <Typography
                   variant="medium"
-                  
                   className="mb-3 font-semibold text-green-800 "
                 >
                   {title}

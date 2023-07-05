@@ -1,23 +1,30 @@
 import {
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Typography,
-    Button
-  } from "@material-tailwind/react";
-   
-  export default function Example() {
-    return (
-        <div className=" mt-16 justify-center flex space-x-14 ">
-      <Card className="mt-6 w-96">
-      <button className="hover:opacity-100 opacity-75">
-        
-      <CardHeader color="light-green" className="relative h-56">
-          <img src="https://images.unsplash.com/photo-1540429071038-04d88623bc9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjIwfHxleWUlMjBmb3IlMjBleWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="img-blur-shadow" layout="fill" />
-        </CardHeader>
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-wrap justify-center gap-8 mt-16">
+      <Card className="w-96">
+        <button className="hover:opacity-100 opacity-75">
+          <CardHeader
+            color="light-green"
+            className="relative h-56"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1540429071038-04d88623bc9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjIwfHxleWUlMjBmb3IlMjBleWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+              alt="img-blur-shadow"
+              className="object-cover w-full h-full"
+            />
+          </CardHeader>
         </button>
-        <CardBody>
+
+        <CardBody className="pb-4">
           <Typography variant="h5" color="blue-gray" className="mb-2">
             UI/UX Review Check
           </Typography>
@@ -28,16 +35,25 @@ import {
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button className="bg-light-green-800">Read More</Button>
+          <Button className="bg-light-green-800 ">Devamını Oku</Button>
         </CardFooter>
       </Card>
-      <Card className="mt-6 w-96">
-      <button className="hover:opacity-100 opacity-75">
-      <CardHeader color="light-green" className="relative h-56">
-          <img src="https://images.unsplash.com/photo-1513758173941-bfbd2e4166f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHJldGluYSUyMGV5ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="img-blur-shadow" layout="fill" />
-        </CardHeader>
+
+      <Card className="w-96">
+        <button className="hover:opacity-100 opacity-75">
+          <CardHeader
+            color="light-green"
+            className="relative h-56"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1513758173941-bfbd2e4166f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHJldGluYSUyMGV5ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="img-blur-shadow"
+              className="object-cover w-full h-full"
+            />
+          </CardHeader>
         </button>
-        <CardBody>
+
+        <CardBody className="pb-4">
           <Typography variant="h5" color="blue-gray" className="mb-2">
             UI/UX Review Check
           </Typography>
@@ -48,16 +64,25 @@ import {
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button className="bg-light-green-800">Read More</Button>
+          <Button className="bg-light-green-800">Devamını Oku</Button>
         </CardFooter>
       </Card>
-      <Card className="mt-6 w-96">
-      <button className="hover:opacity-100 opacity-75">
-      <CardHeader color="light-green" className="relative h-56">
-          <img src="https://plus.unsplash.com/premium_photo-1661302956617-b40b5d2bf19d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk0fHxyZXRpbmElMjBleWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="img-blur-shadow" layout="fill" />
-        </CardHeader>
+
+      <Card className="w-96">
+        <button className="hover:opacity-100 opacity-75">
+          <CardHeader
+            color="light-green"
+            className="relative h-56"
+          >
+            <img
+              src="https://plus.unsplash.com/premium_photo-1661302956617-b40b5d2bf19d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk0fHxyZXRpbmElMjBleWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+              alt="img-blur-shadow"
+              className="object-cover w-full h-full"
+            />
+          </CardHeader>
         </button>
-        <CardBody>
+
+        <CardBody className="pb-4">
           <Typography variant="h5" color="blue-gray" className="mb-2">
             UI/UX Review Check
           </Typography>
@@ -67,10 +92,10 @@ import {
             in Barcelona.
           </Typography>
         </CardBody>
-        <CardFooter className="pt-0 ">
-          <Button className="bg-light-green-800">Read More</Button>
+        <CardFooter className="pt-0">
+          <Button className="bg-light-green-800">Devamını Oku</Button>
         </CardFooter>
       </Card>
-      </div>
-    );
-  }
+    </div>
+  );
+}

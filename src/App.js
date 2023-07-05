@@ -3,6 +3,8 @@ import Header from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Slider from "./Components/Slider/Slider";
+import Contact from "./Components/Contact/Contact"
+
 
 // 3 TEMEL BİLEŞEN VAR. <BrowserRouter,  Route ve Link>
 
@@ -12,7 +14,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" Component={Home}></Route>
-        <Route path="/Contact" Component={Slider}></Route>
+        <Route path="/iletisim" Component={Contact}></Route>
+        
       </Routes>
     </div>
   );

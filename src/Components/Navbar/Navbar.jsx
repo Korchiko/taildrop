@@ -1,142 +1,114 @@
 import React from "react";
-import { Fragment } from 'react'
 
-import {Link,NavLink,Outlet} from "react-router-dom"
-import logo from '../images/new.png'
+
+import {  NavLink } from "react-router-dom";
+import logo from "../images/new.png";
 import {
   Navbar,
   MobileNav,
   Typography,
-  
   IconButton,
-  
 } from "@material-tailwind/react";
 
- 
 export default function Example() {
   const [openNav, setOpenNav] = React.useState(false);
- 
+
   React.useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
- 
+
   const navList = (
-    <ul className="mx-48 flex flex-col gap-2 lg:mb-0 lg:mt-2 lg:flex-row lg:items-center lg:gap-12">
-      <nav
-        as="li"
-        variant="small"
-        color="blue-gray"
-        
-      >
-        <NavLink to="/" className="flex  hover:text-green-700 font-bold items-center">
+    <ul className="  mx-48 flex flex-col gap-2 lg:mb-0 lg:mt-2 lg:flex-row lg:items-center lg:gap-12">
+      <nav as="li" variant="small" color="blue-gray">
+        <NavLink
+          to="/"
+          className="flex  hover:text-green-700 font-bold items-center"
+        >
           Ana Sayfa
         </NavLink>
       </nav>
-      <nav
-        as="li"
-        variant="small"
-        color="blue-gray"
-      
-      >
-        <a href="#" className="flex font-bold hover:text-green-700  items-center">
+      <nav as="li" variant="small" color="blue-gray">
+      <NavLink
+          to="/doctor"
+          className="flex font-bold  hover:text-green-700 items-center"
+        >
           Op.Dr.Sadun Yalçın
-        </a>
+          </NavLink>
       </nav>
-      
-      <nav
-        as="li"
-        variant="small"
-        color="blue-gray"
-      >
-        <a href="#" className="flex font-bold hover:text-green-700 items-center">
-          Hastalıklar
-        </a>
-      </nav>
-      <nav
-        as="li"
-        variant="small"
-        color="blue-gray"
-      >
-        <a href="#" className="flex font-bold hover:text-green-700 items-center">
-          Tanı Yöntemleri
-        </a>
-      </nav>
-      <nav
-        as="li"
-        variant="small"
-        color="blue-gray"
-      >
-        <a href="#" className="flex font-bold hover:text-green-700 items-center">
-          Tedaviler
-        </a>
-      </nav>
-      <nav
-        as="li"
-        variant="small"
-        color="blue-gray"
-      >
-        <a href="#" className="flex font-bold hover:text-green-700 items-center">
-          Kliniğimiz
-        </a>
-      </nav>
-      <nav
-        as="li"
-        variant="small"
-        color="blue-gray"
-      >
-        <a href="#" className="flex font-bold hover:text-green-700 items-center">
-          Hastalar İçin +
-        </a>
-      </nav>
-      <nav
-        as="li"
-        variant="small"
-        color="blue-gray"
-      >
-       
-         
-        
-          
-         <Fragment>
-      
-          <Link to="/contact" className="flex font-bold  hover:text-green-700 items-center">
-            İletişim
-          </Link>
-        
-      
-      <Outlet />
-    </Fragment>
-          
-       
 
-        
-        
+      <nav as="li" variant="small" color="blue-gray">
+      <NavLink
+          to="/hastalık"
+          className="flex font-bold  hover:text-green-700 items-center"
+        >
+          Hastalıklar
+          </NavLink>
+      </nav>
+      <nav as="li" variant="small" color="blue-gray">
+      <NavLink
+          to="/tani"
+          className="flex font-bold  hover:text-green-700 items-center"
+        >
+          Tanı Yöntemleri
+          </NavLink>
+      </nav>
+      <nav as="li" variant="small" color="blue-gray">
+      <NavLink
+          to="/tedavi"
+          className="flex font-bold  hover:text-green-700 items-center"
+        >
+          Tedaviler
+          </NavLink>
+      </nav>
+      <nav as="li" variant="small" color="blue-gray">
+      <NavLink
+          to="/klinik"
+          className="flex font-bold  hover:text-green-700 items-center"
+        >
+          Kliniğimiz
+          </NavLink>
+      </nav>
+      <nav as="li" variant="small" color="blue-gray">
+      <NavLink
+          to="/hastalar"
+          className="flex font-bold  hover:text-green-700 items-center"
+        >
+          Hastalar İçin +
+          </NavLink>
+      </nav>
+      <nav as="li" variant="small" color="blue-gray">
+        <NavLink
+          to="/iletisim"
+          className="flex font-bold  hover:text-green-700 items-center"
+        >
+          İletişim
+        </NavLink>
       </nav>
     </ul>
   );
- 
+
   return (
     <>
-      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4 bg-blue-gray-50">
         <div className="flex items-center justify-between text-blue-gray-900">
-        <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className=" relative left-40 bottom-16  p-6  font-normal  h-2  w-48 "
-      >
-        <a href="#" >
-          <img  src={logo} alt="SY"></img>
-          
-        </a>
-      </Typography>
-          
+          <Typography
+            as="li"
+            variant="small"
+            color="blue-gray"
+            className=" relative left-40 bottom-16  p-6  font-normal  h-2  w-48 "
+          >
+            <NavLink
+            to="/">
+              <img src={logo} alt="SY"></img>
+              </NavLink>
+          </Typography>
+
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
-            
+
             <IconButton
               variant="text"
               className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -176,12 +148,8 @@ export default function Example() {
             </IconButton>
           </div>
         </div>
-        <MobileNav open={openNav}>
-          {navList}
-          
-        </MobileNav>
+        <MobileNav open={openNav}>{navList}</MobileNav>
       </Navbar>
-      
     </>
   );
 }

@@ -4,6 +4,7 @@ import Home from "./Components/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Slider from "./Components/Slider/Slider";
 import Contact from "./Components/Contact/Contact"
+import Footer from "./Components/Footer/Footer"
 
 
 // 3 TEMEL BİLEŞEN VAR. <BrowserRouter,  Route ve Link>
@@ -14,7 +15,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" Component={Home}></Route>
-        <Route path="/iletisim" Component={Contact}></Route>
+        <Route path="/iletisim" Component={Contact} ></Route>
+        
         
       </Routes>
     </div>

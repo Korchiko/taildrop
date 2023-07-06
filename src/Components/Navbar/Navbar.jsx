@@ -1,7 +1,5 @@
-import React from "react";
-
-
-import {  NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../images/new.png";
 import {
   Navbar,
@@ -11,78 +9,127 @@ import {
 } from "@material-tailwind/react";
 
 export default function Example() {
-  const [openNav, setOpenNav] = React.useState(false);
+  const [openNav, setOpenNav] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [timeoutId, setTimeoutId] = useState(null);
 
-  React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
-  }, []);
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [timeoutId]);
+
+  const handleResize = () => {
+    if (window.innerWidth >= 960) {
+      setOpenNav(false);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutId);
+    setShowDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    const id = setTimeout(() => {
+      setShowDropdown(false);
+    }, 500);
+    setTimeoutId(id);
+  };
 
   const navList = (
-    <ul className="  mx-48 flex flex-col gap-2 lg:mb-0 lg:mt-2 lg:flex-row lg:items-center lg:gap-12">
+    <ul className="mx-48 flex flex-col gap-2 lg:mb-0 lg:mt-2 lg:flex-row lg:items-center lg:gap-12">
       <nav as="li" variant="small" color="blue-gray">
         <NavLink
           to="/"
-          className="flex  hover:text-green-700 font-bold items-center"
+          className="flex hover:text-green-700 font-bold items-center"
         >
           Ana Sayfa
         </NavLink>
       </nav>
       <nav as="li" variant="small" color="blue-gray">
-      <NavLink
+        <NavLink
           to="/doctor"
-          className="flex font-bold  hover:text-green-700 items-center"
+          className="flex font-bold hover:text-green-700 items-center"
         >
           Op.Dr.Sadun Yalçın
-          </NavLink>
+        </NavLink>
       </nav>
+      <nav
+  as="li"
+  variant="small"
+  color="blue-gray"
+  className="relative"
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+>
+  <NavLink
+    to="/hastalık"
+    className="flex font-bold hover:text-green-700 items-center"
+  >
+    Hastalıklar
+  </NavLink>
+  {showDropdown && (
+    <ul
+      className="absolute top-10 left-0 bg-white rounded shadow-lg py-2 px-4"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        minWidth: '160px',
+      }}
+    >
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/hastalık1" className="hover:text-green-700">
+          Sarı Nokta Hastalığı
+        </NavLink>
+      </li>
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/hastalık2" className="hover:text-green-700">
+          Epiretinal Membran
+        </NavLink>
+      </li>
+    </ul>
+  )}
+</nav>
 
       <nav as="li" variant="small" color="blue-gray">
-      <NavLink
-          to="/hastalık"
-          className="flex font-bold  hover:text-green-700 items-center"
-        >
-          Hastalıklar
-          </NavLink>
-      </nav>
-      <nav as="li" variant="small" color="blue-gray">
-      <NavLink
+        <NavLink
           to="/tani"
-          className="flex font-bold  hover:text-green-700 items-center"
+          className="flex font-bold hover:text-green-700 items-center"
         >
           Tanı Yöntemleri
-          </NavLink>
+        </NavLink>
       </nav>
       <nav as="li" variant="small" color="blue-gray">
-      <NavLink
+        <NavLink
           to="/tedavi"
-          className="flex font-bold  hover:text-green-700 items-center"
+          className="flex font-bold hover:text-green-700 items-center"
         >
           Tedaviler
-          </NavLink>
+        </NavLink>
       </nav>
       <nav as="li" variant="small" color="blue-gray">
-      <NavLink
+        <NavLink
           to="/klinik"
-          className="flex font-bold  hover:text-green-700 items-center"
+          className="flex font-bold hover:text-green-700 items-center"
         >
-          Kliniğimiz
-          </NavLink>
+          Makaleler
+        </NavLink>
       </nav>
       <nav as="li" variant="small" color="blue-gray">
-      <NavLink
+        <NavLink
           to="/hastalar"
-          className="flex font-bold  hover:text-green-700 items-center"
+          className="flex font-bold hover:text-green-700 items-center"
         >
           Hastalar İçin +
-          </NavLink>
+        </NavLink>
       </nav>
       <nav as="li" variant="small" color="blue-gray">
         <NavLink
           to="/iletisim"
-          className="flex font-bold  hover:text-green-700 items-center"
+          className="flex font-bold hover:text-green-700 items-center"
         >
           İletişim
         </NavLink>
@@ -98,12 +145,11 @@ export default function Example() {
             as="li"
             variant="small"
             color="blue-gray"
-            className=" relative left-40 bottom-16  p-6  font-normal  h-2  w-48 "
+            className="relative left-40 bottom-16 p-6 font-normal h-2 w-48"
           >
-            <NavLink
-            to="/">
-              <img src={logo} alt="SY"></img>
-              </NavLink>
+            <NavLink to="/">
+              <img src={logo} alt="SY" />
+            </NavLink>
           </Typography>
 
           <div className="flex items-center gap-4">

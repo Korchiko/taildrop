@@ -34,7 +34,7 @@ export default function Example() {
               ERM Kimlerde ve nasıl oluşur?
             </Typography>
             <Typography color="gray" className="font-normal mb-8 ">
-              <p className="line-clamp-4 hover:line-clamp-15" >
+              <p className="line-clamp-4  hover:line-clamp-15 " >
               Makula denilen sarı nokta retina tabakasının tam orta noktasında
               olup görme işlevinin meydana geldiği en önemli noktadır.Araba
               kullanmak ve okumak gibi görsel işlevler makula bölgesi sayesinde

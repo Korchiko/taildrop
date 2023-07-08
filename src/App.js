@@ -2,9 +2,17 @@ import "./App.css";
 import Header from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import { Route, Routes } from "react-router-dom";
-import Slider from "./Components/Slider/Slider";
-import Contact from "./Components/Contact/Contact"
-import Footer from "./Components/Footer/Footer"
+import Tani from "./Components/Tani/Tani"
+import Contact from "./Components/Contact/Contact";
+import HastaOne from "./Components/Hasta/Hasta1"
+import HastaTwo from "./Components/Hasta/Hasta2"
+import HastaThree from "./Components/Hasta/Hasta3"
+import HastaFour from "./Components/Hasta/Hasta4"
+import HastaFive from "./Components/Hasta/Hasta5"
+
+
+import TedaviOne from "./Components/Tedavi/Tedavione"
+import TedaviTwo from "./Components/Tedavi/Tedavitwo"
 
 
 // 3 TEMEL BİLEŞEN VAR. <BrowserRouter,  Route ve Link>
@@ -15,9 +23,22 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" Component={Home}></Route>
-        <Route path="/iletisim" Component={Contact} ></Route>
+        <Route path="/iletisim" Component={Contact}></Route>
+        <Route path="/tani1" Component={Tani}></Route>
+        <Route path="/hastalik1" Component={HastaOne}></Route>
+        <Route path="/hastalik2" Component={HastaTwo}></Route>
+        <Route path="/hastalik3" Component={HastaThree}></Route>
+        <Route path="/hastalik4" Component={HastaFour}></Route>
+        <Route path="/hastalik5" Component={HastaFive}></Route>
+
+
+
+        <Route path="/tedavi1" Component={TedaviOne}></Route>
+        <Route path="/tedavi2" Component={TedaviTwo}></Route>
+
         
-        
+
+
       </Routes>
     </div>
   );

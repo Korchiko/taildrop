@@ -5,18 +5,20 @@ const LINKS = [
     title: "Hastalıklar",
     items: [
       "Sarı Nokta Hastalığı",
-      "Diabetik Retinopati",
+      "Diyabetik Retinopati",
       "Retina Dekolmanı",
-      "Gece Körlüğüne Bağlı Makula Ödemi",
+      "Makuler Hole",
+      "Epiretinal Membran",
+
     ],
   },
   {
     title: "Tedaviler",
-    items: ["Göz İçi İğne Uygulaması", "Careers", "Press", "News"],
+    items: ["Göz İçi İğne Uygulaması", "Intravitreal Enjeksiyon", "Smile Laser", ""],
   },
   {
     title: "Tanı Yöntemleri",
-    items: ["Blog", "Newsletter", "Events", "Help center"],
+    items: ["", "", "", ""],
   },
 ];
 

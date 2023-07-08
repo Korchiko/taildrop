@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script type="text/javascript">
+      (function () {
+          var options = {
+              whatsapp: "905067563522",
+              call_to_action: "Merhaba,size nasıl yardımcı olabiliriz?",
+              position: "right",
+          };
+          var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+          var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+          s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+          var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      })();
+  </script>
     <meta charset="utf-8" />
     <link
       rel="icon"
       type="image/png"
       sizes="64x64"
-      href="%PUBLIC_URL%/favicon.png"
+      href="./favicon.png"
     />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
@@ -16,9 +29,9 @@
       name="description"
       content="Sadun Yalçın"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="apple-touch-icon" href="./favicon.png" />
 
-    <link rel="manifest" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="manifest" href="./favicon.png" />
 
     <title>Op.Dr. Sadun Yalcin</title>
   </head>

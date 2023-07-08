@@ -11,6 +11,9 @@ import {
 export default function Example() {
   const [openNav, setOpenNav] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown1, setShowDropdown1] = useState(false);
+  const [showDropdown2, setShowDropdown2] = useState(false);
+
   const [timeoutId, setTimeoutId] = useState(null);
 
   useEffect(() => {
@@ -35,7 +38,29 @@ export default function Example() {
   const handleMouseLeave = () => {
     const id = setTimeout(() => {
       setShowDropdown(false);
-    }, 500);
+    }, 100);
+    setTimeoutId(id);
+  };
+  const handleMouseEnter1 = () => {
+    clearTimeout(timeoutId);
+    setShowDropdown1(true);
+  };
+
+  const handleMouseLeave1 = () => {
+    const id = setTimeout(() => {
+      setShowDropdown1(false);
+    }, 100);
+    setTimeoutId(id);
+  };
+  const handleMouseEnter2 = () => {
+    clearTimeout(timeoutId);
+    setShowDropdown2(true);
+  };
+  
+  const handleMouseLeave2 = () => {
+    const id = setTimeout(() => {
+      setShowDropdown2(false);
+    }, 100);
     setTimeoutId(id);
   };
 
@@ -66,14 +91,14 @@ export default function Example() {
   onMouseLeave={handleMouseLeave}
 >
   <NavLink
-    to="/hastalık"
+    to="/hastalik"
     className="flex font-bold hover:text-green-700 items-center"
   >
     Hastalıklar
   </NavLink>
   {showDropdown && (
     <ul
-      className="absolute top-10 left-0 bg-white rounded shadow-lg py-2 px-4"
+      className="absolute top-10 left bg-gray-100 rounded shadow-lg py-2 px-4"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -81,35 +106,106 @@ export default function Example() {
       }}
     >
       <li style={{ whiteSpace: 'nowrap' }}>
-        <NavLink to="/hastalık1" className="hover:text-green-700">
+        <NavLink to="/hastalik1" className="hover:text-green-700">
           Sarı Nokta Hastalığı
         </NavLink>
       </li>
       <li style={{ whiteSpace: 'nowrap' }}>
-        <NavLink to="/hastalık2" className="hover:text-green-700">
-          Epiretinal Membran
+        <NavLink to="/hastalik2" className="hover:text-green-700">
+          Retina Dekolmanı
+        </NavLink>
+      </li>
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/hastalik3" className="hover:text-green-700">
+          Makuler Hole(Sarı Nokta Deliği)
+        </NavLink>
+      </li>
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/hastalik4" className="hover:text-green-700">
+          Diyabetik Retinopati
+        </NavLink>
+      </li>
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/hastalik5" className="hover:text-green-700">
+        Epiretinal Membran
         </NavLink>
       </li>
     </ul>
   )}
 </nav>
 
-      <nav as="li" variant="small" color="blue-gray">
-        <NavLink
-          to="/tani"
-          className="flex font-bold hover:text-green-700 items-center"
-        >
-          Tanı Yöntemleri
+<nav
+  as="li"
+  variant="small"
+  color="blue-gray"
+  className="relative"
+  onMouseEnter={handleMouseEnter1}
+  onMouseLeave={handleMouseLeave1}
+>
+  <NavLink
+    to="/tani"
+    className="flex font-bold hover:text-green-700 items-center"
+  >
+    Tanı Yöntemleri
+  </NavLink>
+  {showDropdown1 && (
+    <ul
+      className="absolute top-10 left-0 bg-white rounded shadow-lg py-2 px-4"
+      onMouseEnter={handleMouseEnter1}
+      onMouseLeave={handleMouseLeave1}
+      style={{
+        minWidth: '160px',
+      }}
+    >
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/tani1" className="hover:text-green-700">
+        
         </NavLink>
-      </nav>
-      <nav as="li" variant="small" color="blue-gray">
-        <NavLink
-          to="/tedavi"
-          className="flex font-bold hover:text-green-700 items-center"
-        >
-          Tedaviler
+      </li>
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/tani2" className="hover:text-green-700">
+          
         </NavLink>
-      </nav>
+      </li>
+    </ul>
+  )}
+</nav>
+<nav
+  as="li"
+  variant="small"
+  color="blue-gray"
+  className="relative"
+  onMouseEnter={handleMouseEnter2}
+  onMouseLeave={handleMouseLeave2}
+>
+  <NavLink
+    to="/tedaviler"
+    className="flex font-bold hover:text-green-700 items-center"
+  >
+    Tedaviler
+  </NavLink>
+  {showDropdown2 && (
+    <ul
+      className="absolute top-10 left bg-gray-100 rounded shadow-lg py-2 px-4"
+      onMouseEnter={handleMouseEnter2}
+      onMouseLeave={handleMouseLeave2}
+      style={{
+        minWidth: '160px',
+      }}
+    >
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/tedavi1" className="hover:text-green-700">
+          Laser Yöntemi
+        </NavLink>
+      </li>
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/tedavi2" className="hover:text-green-700">
+        İntravitreal Enjeksiyon
+        </NavLink>
+      </li>
+    </ul>
+  )}
+</nav>
       <nav as="li" variant="small" color="blue-gray">
         <NavLink
           to="/klinik"

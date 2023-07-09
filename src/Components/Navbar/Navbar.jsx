@@ -63,6 +63,7 @@ export default function Example() {
     }, 100);
     setTimeoutId(id);
   };
+  
 
   const navList = (
     <ul className="mx-48 flex flex-col gap-2 lg:mb-0 lg:mt-2 lg:flex-row lg:items-center lg:gap-12">
@@ -150,7 +151,7 @@ export default function Example() {
   </NavLink>
   {showDropdown1 && (
     <ul
-      className="absolute top-10 left-0 bg-white rounded shadow-lg py-2 px-4"
+      className="absolute top-10 left-0 bg-gray-100 rounded shadow-lg py-2 px-4"
       onMouseEnter={handleMouseEnter1}
       onMouseLeave={handleMouseLeave1}
       style={{
@@ -159,12 +160,23 @@ export default function Example() {
     >
       <li style={{ whiteSpace: 'nowrap' }}>
         <NavLink to="/tani1" className="hover:text-green-700">
-        
+        Fundus Floresein Anjiografisi (FFA)
+
         </NavLink>
       </li>
       <li style={{ whiteSpace: 'nowrap' }}>
         <NavLink to="/tani2" className="hover:text-green-700">
-          
+        İndosiyanin Anjiografisi (ICG)
+        </NavLink>
+      </li>
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/tani3" className="hover:text-green-700">
+        Optik Kohorens Tomografisi (OCT)
+        </NavLink>
+      </li>
+      <li style={{ whiteSpace: 'nowrap' }}>
+        <NavLink to="/tani4" className="hover:text-green-700">
+        Oftalmik Ultrasonografi (USG)
         </NavLink>
       </li>
     </ul>
@@ -195,7 +207,7 @@ export default function Example() {
     >
       <li style={{ whiteSpace: 'nowrap' }}>
         <NavLink to="/tedavi1" className="hover:text-green-700">
-          Laser Yöntemi
+          Smile
         </NavLink>
       </li>
       <li style={{ whiteSpace: 'nowrap' }}>

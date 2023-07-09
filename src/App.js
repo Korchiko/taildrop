@@ -3,6 +3,12 @@ import Header from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Tani from "./Components/Tani/Tani"
+import TaniTwo from "./Components/Tani/Tani2"
+import TaniThree from "./Components/Tani/Tani3"
+import TaniFour from "./Components/Tani/Tani4"
+
+
+
 import Contact from "./Components/Contact/Contact";
 import HastaOne from "./Components/Hasta/Hasta1"
 import HastaTwo from "./Components/Hasta/Hasta2"
@@ -25,6 +31,12 @@ function App() {
         <Route path="/" Component={Home}></Route>
         <Route path="/iletisim" Component={Contact}></Route>
         <Route path="/tani1" Component={Tani}></Route>
+        <Route path="/tani2" Component={TaniTwo}></Route>
+        <Route path="/tani3" Component={TaniThree}></Route>
+        <Route path="/tani4" Component={TaniFour}></Route>
+
+
+
         <Route path="/hastalik1" Component={HastaOne}></Route>
         <Route path="/hastalik2" Component={HastaTwo}></Route>
         <Route path="/hastalik3" Component={HastaThree}></Route>

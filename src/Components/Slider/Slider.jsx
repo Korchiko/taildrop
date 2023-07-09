@@ -1,73 +1,99 @@
 import React, { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import { RxDotFilled } from "react-icons/rx";
 
 function App() {
   const slides = [
     {
       url: "https://images.unsplash.com/photo-1630048938504-bcca67d3f584?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
+      altTitle: "Akıllı Mercek",
+      title: "50 yaş üstünde takılır ve ömür boyu gözde kalır. Sizi yakın ve uzak gözlükten kurtarır."
     },
     {
       url: "https://images.unsplash.com/photo-1544126547-4c657414c37b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      altTitle: "Sarı Nokta Hastalığı",
+      title: "Kuru ve yaş tip olmak üzere ikiye ayrılır ve artık tedavi edilebilir bir hastalıktır."
     },
     {
       url: "https://images.unsplash.com/photo-1529259491550-3eeaa2780bfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+      altTitle: "Diabet",
+      title: "Mutlaka göze vurur ama iyi bir tedavi ve takiple tamamen tedavi edilebilir."
     },
     {
       url: "https://images.unsplash.com/photo-1557585580-cdf0764d8393?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      altTitle: "Gözde Sinek Uçuşması",
+      title: "Gözde sinek uçuşması ve şimşek çakması varsa retina da yırtık olabilir. Bu acil bir durumdur."
+    },
+    {
+      url: "https://images.unsplash.com/photo-1516307318288-46d4194fe79e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      altTitle: "Glokom",
+      title: "Hiçbir belirti vermeden sizi kör edebilir. Erken teşhis ve damla ile çoğu tedavi edilebilir."
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  useEffect(()=>{
-    const timer = setTimeout(()=>{
-      if(currentIndex===3){
-        setCurrentIndex(0)
-      
-      }else{
-        setCurrentIndex(currentIndex+1)
-      } 
-    },3000)
-    return ()=> clearTimeout(timer)
+  const [isHovered, setIsHovered] = useState(false);
 
-  }) 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [currentIndex, slides.length]);
+
   const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+    );
   };
 
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex)
-  }
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
-    <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group ">
-      <div
-        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
-      ></div>
-      {/*Left Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactLeft onClick={prevSlide} size={30} />
-      </div>
-
-      {/*Ride Arrow */}
-      <div className=" hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactRight onClick={nextSlide} size={30} />
-      </div>
-      <div className="flex top-4 justify-center py-2">
+    <div
+      className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="relative w-full h-full rounded-2xl overflow-hidden">
         {slides.map((slide, slideIndex) => (
-          <div key={slideIndex} onClick={()=>goToSlide(slideIndex)} className="text-2xl cursor-pointer text-gray-500">
-            <RxDotFilled />
+          <div
+            key={slideIndex}
+            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
+              slideIndex === currentIndex ? "opacity-80" : "opacity-0"
+            }`}
+          >
+            <img
+              src={slide.url}
+              alt={slide.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex items-center  text-white  font-normal">
+              <div className="px-4 text-start pb-8">
+                <div className="text-6xl font-bold">{slide.altTitle}</div>
+                <div className="pt-12 text-start text-2xl ">{slide.title}</div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
+      {isHovered && (
+        <>
+          <BsChevronCompactLeft
+            className="absolute top-1/2 -translate-y-1/2 left-5 text-4xl rounded-full  text-white cursor-pointer hover:bg-gray-800 transition-colors"
+            onClick={prevSlide}
+         />
+          <BsChevronCompactRight
+            className="absolute top-1/2 -translate-y-1/2 right-5 text-4xl rounded-full  text-white cursor-pointer hover:bg-gray-800 transition-colors"
+            onClick={nextSlide}
+          />
+        </>
+      )}
     </div>
   );
 }

@@ -1,56 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script type="text/javascript">
+      (function () {
+          var options = {
+              whatsapp: "905067563522",
+              call_to_action: "Merhaba,size nasıl yardımcı olabiliriz?",
+              position: "right",
+          };
+          var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+          var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+          s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+          var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      })();
+  </script>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="./favicon.png"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Sadun Yalçın"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  
-    <title>React App</title>
+    <link rel="apple-touch-icon" href="./favicon.png" />
+
+    <link rel="manifest" href="./favicon.png" />
+
+    <title>Op.Dr. Sadun Yalcin</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-      <div class="h-screen w-full overflow-hidden flex flex-nowrap text-center" id="slider">
-        <div class="bg-blue-600 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center">
-            <h2 class="text-4xl max-w-md">Your Big Ideia</h2>
-            <p class="max-w-md">It's fast, flexible, and reliable — with zero-runtime.</p>
+      <div
+        class="h-screen w-full overflow-hidden flex flex-nowrap text-center"
+        id="slider"
+      >
+        <div
+          class="bg-blue-600 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center"
+        >
+          <h2 class="text-4xl max-w-md">Your Big Ideia</h2>
+          <p class="max-w-md">
+            It's fast, flexible, and reliable — with zero-runtime.
+          </p>
         </div>
-        <div class="bg-pink-400 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center">
-            <h2 class="text-4xl max-w-md">Tailwind CSS works by scanning all of your HTML</h2>
-            <p class="max-w-md">It's fast, flexible, and reliable — with zero-runtime.</p>
+        <div
+          class="bg-pink-400 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center"
+        >
+          <h2 class="text-4xl max-w-md">
+            Tailwind CSS works by scanning all of your HTML
+          </h2>
+          <p class="max-w-md">
+            It's fast, flexible, and reliable — with zero-runtime.
+          </p>
         </div>
-        <div class="bg-teal-500 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center">
-            <h2 class="text-4xl max-w-md">React, Vue, and HTML</h2>
-            <p class="max-w-md">Accessible, interactive examples for React and Vue powered by Headless UI, plus vanilla HTML if you’d rather write any necessary JS yourself.</p>
+        <div
+          class="bg-teal-500 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center"
+        >
+          <h2 class="text-4xl max-w-md">React, Vue, and HTML</h2>
+          <p class="max-w-md">
+            Accessible, interactive examples for React and Vue powered by
+            Headless UI, plus vanilla HTML if you’d rather write any necessary
+            JS yourself.
+          </p>
         </div>
-    </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const slider = document.querySelector('#slider');
-        setTimeout(function moveSlide() {
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const slider = document.querySelector("#slider");
+          setTimeout(function moveSlide() {
             const max = slider.scrollWidth - slider.clientWidth;
             const left = slider.clientWidth;
-    
+
             if (max === slider.scrollLeft) {
-                slider.scrollTo({left: 0, behavior: 'smooth'})
+              slider.scrollTo({ left: 0, behavior: "smooth" });
             } else {
-                slider.scrollBy({left, behavior: 'smooth'})
+              slider.scrollBy({ left, behavior: "smooth" });
             }
-    
-            setTimeout(moveSlide, 2000)
-        }, 2000)
-    
-    })
-    </script>
+
+            setTimeout(moveSlide, 2000);
+          }, 2000);
+        });
+      </script>
     </div>
-    
   </body>
 </html>

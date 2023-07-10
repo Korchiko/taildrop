@@ -34,7 +34,7 @@ function App() {
     
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   }, []);
 
   if (isLoading) {

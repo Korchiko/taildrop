@@ -1,7 +1,8 @@
 import "./App.css";
-import Header from "./Components/Navbar/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import { Route, Routes } from "react-router-dom";
+
 import Tani from "./Components/Tani/Tani"
 import TaniTwo from "./Components/Tani/Tani2"
 import TaniThree from "./Components/Tani/Tani3"
@@ -10,6 +11,7 @@ import TaniFour from "./Components/Tani/Tani4"
 
 
 import Contact from "./Components/Contact/Contact";
+
 import HastaOne from "./Components/Hasta/Hasta1"
 import HastaTwo from "./Components/Hasta/Hasta2"
 import HastaThree from "./Components/Hasta/Hasta3"
@@ -26,7 +28,7 @@ import TedaviTwo from "./Components/Tedavi/Tedavitwo"
 function App() {
   return (
     <div>
-      <Header />
+      <Navbar />
       <Routes>
         <Route path="/" Component={Home}></Route>
         <Route path="/iletisim" Component={Contact}></Route>

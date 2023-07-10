@@ -94,7 +94,7 @@ function EmailForm() {
           <a href="mailto:ismailldmirr@gmail.com" className="mt-4 text-lg">
             E-Posta
           </a>
-          <p className="text-sm">ismailldmirr@gmail.com</p>
+          <p className="text-sm">dr.sadunyalcin@hotmail.com</p>
         </div>
         <div className="text-center  w-72 drop-shadow-2xl flex flex-col items-center border-8 rounded-md text-black bg-blue-gray-50 mx-4">
           <div className="w-12 h-6 flex justify-center items-center">

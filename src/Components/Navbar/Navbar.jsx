@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import logo from "../images/new.png";
+import Profile from "../Profile/Profile"
 import {
   Navbar,
   MobileNav,
@@ -13,6 +14,8 @@ export default function Example() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showDropdown1, setShowDropdown1] = useState(false);
   const [showDropdown2, setShowDropdown2] = useState(false);
+  
+
 
   const [timeoutId, setTimeoutId] = useState(null);
 
@@ -64,24 +67,28 @@ export default function Example() {
     setTimeoutId(id);
   };
   
-
+  
+  
   const navList = (
     <ul className="mx-48 flex flex-col gap-2 lg:mb-0 lg:mt-2 lg:flex-row lg:items-center lg:gap-12">
       <nav as="li" variant="small" color="blue-gray">
-        <NavLink
-          to="/"
+        <a
+          href="/"
           className="flex hover:text-green-700 font-bold items-center"
         >
           Ana Sayfa
-        </NavLink>
+        </a>
       </nav>
       <nav as="li" variant="small" color="blue-gray">
-        <NavLink
-          to="/doctor"
+        <NavLink to="/profile" 
+          
           className="flex font-bold hover:text-green-700 items-center"
         >
+          
+
           Op.Dr.Sadun Yalçın
-        </NavLink>
+          </NavLink>
+        
       </nav>
       <nav
   as="li"
@@ -92,7 +99,7 @@ export default function Example() {
   onMouseLeave={handleMouseLeave}
 >
   <NavLink
-    to="/hastalik"
+    to="#"
     className="flex font-bold hover:text-green-700 items-center"
   >
     Hastalıklar
@@ -144,7 +151,7 @@ export default function Example() {
   onMouseLeave={handleMouseLeave1}
 >
   <NavLink
-    to="/tani"
+    to="#"
     className="flex font-bold hover:text-green-700 items-center"
   >
     Tanı Yöntemleri
@@ -191,7 +198,7 @@ export default function Example() {
   onMouseLeave={handleMouseLeave2}
 >
   <NavLink
-    to="/tedaviler"
+    to="#"
     className="flex font-bold hover:text-green-700 items-center"
   >
     Tedaviler
@@ -220,7 +227,7 @@ export default function Example() {
 </nav>
       <nav as="li" variant="small" color="blue-gray">
         <NavLink
-          to="/klinik"
+          to="/makaleler"
           className="flex font-bold hover:text-green-700 items-center"
         >
           Makaleler
@@ -228,7 +235,7 @@ export default function Example() {
       </nav>
       <nav as="li" variant="small" color="blue-gray">
         <NavLink
-          to="/hastalar"
+          to="#"
           className="flex font-bold hover:text-green-700 items-center"
         >
           Hastalar İçin +
@@ -255,9 +262,9 @@ export default function Example() {
             color="blue-gray"
             className="relative left-40 bottom-16 p-6 font-normal h-2 w-48"
           >
-            <NavLink to="/">
+            <a href="/">
               <img src={logo} alt="SY" />
-            </NavLink>
+            </a>
           </Typography>
 
           <div className="flex items-center gap-4">

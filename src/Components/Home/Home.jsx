@@ -8,9 +8,11 @@ import Profile from "../Profile/Profile"
 import Cardsthree from "../Cardsthree/Cardsthree"
 
 
+
 const Home = () => {
   return (
     <>
+    
       <Slider />
       <Picture />
       <Cardstwo />

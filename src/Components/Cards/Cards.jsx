@@ -62,7 +62,7 @@ export default function Example() {
             <Typography>
               <p className=" line-clamp-3 hover:line-clamp-9  ">
               Katarakt insanın normal şeffaf merceğinin yaşla birlikte
-              kesifleşmesidir....Bir nevi gözün yaşlanması olup tek tedavisi laser
+              kesifleşmesidir.Bir nevi gözün yaşlanması olup tek tedavisi laser
               ile cerrahi yöntemdir.Bozulmuş mercek lazer ile alınarak yerine
               suni mercek konur.Eskiden tek odaklı monofokal mercekler
               kullanılırdı ve hasta sadece yakin gözlük kullanırdı.Gelişen

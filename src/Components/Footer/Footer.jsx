@@ -34,7 +34,7 @@ export default function Example() {
               <p className="text-green-800 font-bold mt-6 text-lg">
                 Hakkımızda
               </p>
-              <p className="mt-6 max-w-xs sm:max-w-sm md:max-w-md text-lg font-light">
+              <p className="mt-6 max-w-xs sm:max-w-sm md:max-w-md  text-lg font-normal">
                 Her daim hastaların ve hasta yakınlarının yanında duran güler
                 yüzlü, anlayışlı ve nitelikli profesyonel kadromuz ile sağlık
                 alanında farklı ve güvenilir hizmet anlayışını benimsiyoruz.

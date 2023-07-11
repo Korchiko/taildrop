@@ -12,6 +12,10 @@ import HastaTwo from "./Components/Hasta/Hasta2";
 import HastaThree from "./Components/Hasta/Hasta3";
 import HastaFour from "./Components/Hasta/Hasta4";
 import HastaFive from "./Components/Hasta/Hasta5";
+import HastaSix from "./Components/Hasta/Hasta6";
+import HastaSeven from "./Components/Hasta/Hasta7";
+
+
 
 import Tani from "./Components/Tani/Tani";
 import TaniTwo from "./Components/Tani/Tani2";
@@ -56,6 +60,10 @@ function App() {
         <Route path="/hastalik3" Component={HastaThree}></Route>
         <Route path="/hastalik4" Component={HastaFour}></Route>
         <Route path="/hastalik5" Component={HastaFive}></Route>
+        <Route path="/hastalik6" Component={HastaSix}></Route>
+        <Route path="/hastalik7" Component={HastaSeven}></Route>
+
+
 
         <Route path="/tani1" Component={Tani}></Route>
         <Route path="/tani2" Component={TaniTwo}></Route>

@@ -132,6 +132,16 @@ export default function Example() {
                 Epiretinal Membran
               </NavLink>
             </li>
+            <li style={{ whiteSpace: 'nowrap' }}>
+              <NavLink to="/hastalik6" className="hover:text-green-700">
+                Glokom
+              </NavLink>
+            </li>
+            <li style={{ whiteSpace: 'nowrap' }}>
+              <NavLink to="/hastalik7" className="hover:text-green-700">
+                Katarakt ve Akıllı Mercek
+              </NavLink>
+            </li>
           </ul>
         )}
       </li>
@@ -208,12 +218,12 @@ export default function Example() {
           >
             <li style={{ whiteSpace: 'nowrap' }}>
               <NavLink to="/tedavi1" className="hover:text-green-700">
-                Smile
+                SMILE LASER TEDAVİSİ
               </NavLink>
             </li>
             <li style={{ whiteSpace: 'nowrap' }}>
               <NavLink to="/tedavi2" className="hover:text-green-700">
-                İntravitreal Enjeksiyon
+                Göz İçi İlaç Enjeksiyonları
               </NavLink>
             </li>
           </ul>

@@ -41,7 +41,7 @@ export default function Example() {
     }, 50);
     setTimeoutId(id);
   };
-  
+
   const handleMouseEnter1 = () => {
     clearTimeout(timeoutId);
     setShowDropdown1(true);
@@ -58,7 +58,7 @@ export default function Example() {
     clearTimeout(timeoutId);
     setShowDropdown2(true);
   };
-  
+
   const handleMouseLeave2 = () => {
     const id = setTimeout(() => {
       setShowDropdown2(false);
@@ -67,23 +67,32 @@ export default function Example() {
   };
 
   const navList = (
-    <ul className="flex flex-col gap-2 lg:mb-0 lg:mt-2 lg:flex-row lg:items-center lg:gap-12">
-      <li as="li" variant="small" color="blue-gray">
-        <a 
-          href="/"
-          className="flex hover:text-green-700 font-bold items-center"
-        >
-          Ana Sayfa
-        </a>
-      </li>
+    <ul className="flex flex-col gap-2 lg:mb-0 lg:mt-2 tracking-wide lg:flex-row lg:items-center lg:gap-12">
+    <li className="flex items-center w-48 h-0">
+      <a href="/">
+        <img src={logo} alt="SY" className="w-28 h-32 mr-2  " />
+      </a>
+    </li>
+    
+    <li className="flex items-center">
+      <a href="/" className="flex hover:text-green-700  font-bold items-center">
+        Ana Sayfa
+      </a>
+    </li>
+   
+  
+  
+
+   
       <li as="li" variant="small" color="blue-gray">
         <NavLink
           to="/profile"
-          className="flex font-bold hover:text-green-700 items-center"
+          className="flex font-bold  hover:text-green-700 items-center"
         >
           Op.Dr.Sadun Yalçın
         </NavLink>
       </li>
+     
       <li
         as="li"
         variant="small"
@@ -94,7 +103,7 @@ export default function Example() {
       >
         <NavLink
           to="#"
-          className="flex font-bold hover:text-green-700 items-center"
+          className="flex font-bold group rounded-md  hover:text-green-700 items-center"
         >
           Hastalıklar
         </NavLink>
@@ -104,44 +113,60 @@ export default function Example() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{
-              minWidth: '160px',
+              minWidth: "160px",
             }}
           >
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/hastalik1" className="hover:text-green-700">
-                Sarı Nokta Hastalığı
-              </NavLink>
-            </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/hastalik2" className="hover:text-green-700">
-                Retina Dekolmanı
-              </NavLink>
-            </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/hastalik3" className="hover:text-green-700">
-                Makuler Hole(Sarı Nokta Deliği)
-              </NavLink>
-            </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/hastalik4" className="hover:text-green-700">
+              
+            <div className="hover:bg-green-800 rounded-md transition duration-700  hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/hastalik4" className=" ml-4">
                 Diyabetik Retinopati
               </NavLink>
             </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/hastalik5" className="hover:text-green-700">
+            </div>
+            <div className="hover:bg-green-800 rounded-md transition duration-700 hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/hastalik1" className=" ml-4">
+                Sarı Nokta Hastalığı
+              </NavLink>
+            </li>
+            </div>
+            <div className="hover:bg-green-800 rounded-md transition duration-700 hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/hastalik2" className=" ml-4">
+                Retina Dekolmanı
+              </NavLink>
+            </li>
+            </div>
+            <div className="hover:bg-green-800 rounded-md transition duration-700 hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/hastalik5" className=" ml-4">
                 Epiretinal Membran
               </NavLink>
             </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/hastalik6" className="hover:text-green-700">
+            </div>
+            <div className="hover:bg-green-800 rounded-md transition duration-700 hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/hastalik3" className=" ml-4">
+                Makuler Hole(Sarı Nokta Deliği)
+              </NavLink>
+            </li>
+            </div>
+            <div className="hover:bg-green-800 rounded-md transition duration-700 hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/hastalik6" className=" ml-4">
                 Glokom
               </NavLink>
             </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/hastalik7" className="hover:text-green-700">
+            </div>
+            <div className="hover:bg-green-800 rounded-md hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/hastalik7" className=" ml-4">
                 Katarakt ve Akıllı Mercek
               </NavLink>
             </li>
+            </div>
+            
           </ul>
         )}
       </li>
@@ -156,43 +181,51 @@ export default function Example() {
       >
         <NavLink
           to="#"
-          className="flex font-bold hover:text-green-700 items-center"
+          className="flex font-bold hover:text-green-700  items-center"
         >
           Tanı Yöntemleri
         </NavLink>
         {showDropdown1 && (
           <ul
-            className="absolute top-10 left-0 bg-white sm:bg-gray-100 z-50 rounded shadow-lg py-2 px-4"
+            className="absolute top-10 left-0 rounded-lg bg-white sm:bg-gray-100 z-50  shadow-lg py-2 px-4"
             onMouseEnter={handleMouseEnter1}
             onMouseLeave={handleMouseLeave1}
             style={{
-              minWidth: '160px',
+              minWidth: "160px",
             }}
-          >
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/tani1" className="hover:text-green-700">
+          > 
+            <div className="hover:bg-green-800 rounded-md transition duration-700 ease-in-out hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/tani1" className="ml-4">
                 Fundus Floresein Anjiografisi (FFA)
               </NavLink>
             </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/tani2" className="hover:text-green-700">
+            </div>
+            <div className="hover:bg-green-800 rounded-md transition duration-700 ease-in-out hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/tani2" className="ml-4">
                 İndosiyanin Anjiografisi (ICG)
               </NavLink>
             </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/tani3" className="hover:text-green-700">
+            </div>
+            <div className="hover:bg-green-800 rounded-md transition duration-700 ease-in-out  hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/tani3" className="ml-4">
                 Optik Kohorens Tomografisi (OCT)
               </NavLink>
             </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/tani4" className="hover:text-green-700">
+            </div>
+            <div className="hover:bg-green-800 rounded-md transition duration-700 ease-in-out hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/tani4" className="ml-4">
                 Oftalmik Ultrasonografi (USG)
               </NavLink>
             </li>
+            </div>
           </ul>
         )}
       </li>
-      
+
       <li
         as="li"
         variant="small"
@@ -209,23 +242,27 @@ export default function Example() {
         </NavLink>
         {showDropdown2 && (
           <ul
-            className="absolute top-10 left bg-white sm:bg-gray-100 z-50 rounded shadow-lg py-2 px-4"
+            className="absolute top-10 left bg-white sm:bg-gray-100 z-50 transition duration-700 rounded shadow-lg py-2 px-4"
             onMouseEnter={handleMouseEnter2}
             onMouseLeave={handleMouseLeave2}
             style={{
-              minWidth: '160px',
+              minWidth: "160px",
             }}
           >
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/tedavi1" className="hover:text-green-700">
+            <div className="hover:bg-green-800 rounded-md transition duration-700  hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/tedavi1" className="ml-4">
                 SMILE LASER TEDAVİSİ
               </NavLink>
             </li>
-            <li style={{ whiteSpace: 'nowrap' }}>
-              <NavLink to="/tedavi2" className="hover:text-green-700">
+            </div>
+            <div className="hover:bg-green-800 rounded-md transition duration-700 hover:text-white">
+            <li style={{ whiteSpace: "nowrap" }}>
+              <NavLink to="/tedavi2" className="ml-4">
                 Göz İçi İlaç Enjeksiyonları
               </NavLink>
             </li>
+            </div>
           </ul>
         )}
       </li>
@@ -260,16 +297,14 @@ export default function Example() {
   return (
     <>
       <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4 text-black sm:bg-blue-gray-50">
-        <div className="flex items-center justify-between text-blue-gray-900">
+        <div className="flex items-center justify-around text-blue-gray-900">
           <Typography
             as="li"
             variant="small"
             color="blue-gray"
             className="relative left-40 bottom-16 p-6 font-normal h-2 w-48"
           >
-            <a href="/">
-              <img src={logo} className="mr-2  " alt="SY" />
-            </a>
+            
           </Typography>
 
           <div className="flex items-center gap-4">

@@ -38,7 +38,7 @@ export default function Example() {
             </Typography>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button className="bg-light-green-800">Devamını Oku</Button>
+            <Button className="bg-light-green-800"><a href="/hastalik6">Devamını Oku</a></Button>
           </CardFooter>
         </Card>
       </div>
@@ -71,7 +71,7 @@ export default function Example() {
             </Typography>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button className="bg-light-green-800">Devamını Oku</Button>
+            <Button className="bg-light-green-800 disabled:">Devamını Oku</Button>
           </CardFooter>
         </Card>
       </div>
@@ -102,7 +102,7 @@ export default function Example() {
             </Typography>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button className="bg-light-green-800">Devamını Oku</Button>
+            <Button className="bg-light-green-800"><a href="/hastalik2">Devamını Oku</a></Button>
           </CardFooter>
         </Card>
       </div>

@@ -7,6 +7,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
+
 export default function Example() {
   return (
     <div className="flex flex-wrap justify-center gap-16 mt-16">
@@ -38,7 +39,8 @@ export default function Example() {
             </Typography>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button className="bg-light-green-800">Devamını Oku</Button>
+            
+            <Button  className="bg-light-green-800"> <a href="/hastalik1">Devamını Oku</a></Button>
           </CardFooter>
         </Card>
       </div>
@@ -72,7 +74,7 @@ export default function Example() {
             </Typography>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button className="bg-light-green-800">Devamını Oku</Button>
+            <Button className="bg-light-green-800"><a href="/hastalik7">Devamını Oku</a></Button>
           </CardFooter>
         </Card>
       </div>
@@ -103,7 +105,7 @@ export default function Example() {
             </Typography>
           </CardBody>
           <CardFooter className="pt-2">
-            <Button className="bg-light-green-800">Devamını Oku</Button>
+            <Button className="bg-light-green-800"><a href="/hastalik4">Devamını Oku</a></Button>
           </CardFooter>
         </Card>
       </div>

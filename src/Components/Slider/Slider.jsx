@@ -38,7 +38,7 @@ function App() {
       setCurrentIndex((prevIndex) =>
         prevIndex === slides.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000);
+    }, 7000);
     return () => clearTimeout(timer);
   }, [currentIndex, slides.length]);
 

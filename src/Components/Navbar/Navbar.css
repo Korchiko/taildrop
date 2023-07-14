@@ -1,13 +1,21 @@
 .img_img-container {
-  height: 85px;
-  width: 200px;
+  height: 60px;
+  width: 140px;
   object-fit: cover;
+
+}
+
+
+
+.deneme_deneme li {
+  white-space: nowrap;
 }
 
 .deneme_deneme {
   width: 100vw;
   display: flex;
   justify-content: space-around;
+
 }
 
 .left-menü {
@@ -15,48 +23,191 @@
   justify-content: center;
   align-items: center;
 }
+
 .right-menu {
   display: flex;
-  gap: 1.2rem;
-  justify-content: center;
+  gap: 2.6rem;
+  justify-content: space-around;
   align-items: center;
 }
 
-.typoDeneme {
-  border: 10px solid red;
+.animasyon_göster2 {
+  display: none;
+  
+  
 }
 
-.transparent-bg {
-  background-color: transparent;
-  background-color: rgba(255, 255, 255);
+.animasyon_göster {
+  display: block;
+  transition: 3s ease;
+  background-color: blue;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 768px) {
   .img_img-container {
-    border: 1px solid red;
+    position: fixed;
+    top: 0;
+    left: 8px;
     height: 85px;
-    width: 200px;
+    width: 140px;
     object-fit: cover;
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  /* dropdown için animasyon */
+  @keyframes slide-down-fade-in {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  /* butonlar için animasyon */
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  .hst-bg {
+    background: linear-gradient(to right, rgb(169, 198, 140), rgb(255, 255, 255));
+    width: 95%;
+    animation: slide-down-fade-in 1.5s ease-in-out forwards;
+    position: absolute;
+    top: 25px;
+  }
+
+  .hst-btn {
+    background-color: rgb(169, 198, 140);
+
+    position: fixed;
+    right: 20px;
+    line-height: 1.2;
+    width: 2.4vh;
+    height: 2.4vh;
+    font-size: large;
+    animation: fade-in 5s ease-in-out forwards;
+  }
+
+
+
+  .tn-bg {
+    background: linear-gradient(to right, rgb(169, 198, 140), rgb(255, 255, 255));
+    width: 95%;
+    animation: slide-down-fade-in 1.5s ease-in-out forwards;
+    position: absolute;
+    top: 25px;
+  }
+
+  .tn-btn {
+
+    background-color: rgb(169, 198, 140);
+
+    position: fixed;
+    right: 20px;
+    line-height: 1.2;
+    width: 2.4vh;
+    height: 2.4vh;
+    font-size: large;
+    animation: fade-in 5.1s ease-in-out forwards;
+  }
+
+
+
+  .td-bg {
+    position: absolute;
+    top: 25px;
+    background: linear-gradient(to right, rgb(169, 198, 140), rgb(255, 255, 255));
+    width: 95%;
+    animation: slide-down-fade-in 1.5s ease-in-out forwards;
+  }
+
+  .td-btn {
+    background-color: rgb(169, 198, 140);
+
+    position: fixed;
+    right: 20px;
+    line-height: 1.2;
+    width: 2.4vh;
+    height: 2.4vh;
+    font-size: large;
+    animation: fade-in 5.2s ease-in-out forwards;
   }
 
   .deneme_deneme {
     display: flex;
     width: 100vw;
-    border: 1px solid black;
-    justify-content: start;
+
+    justify-content: flex-start;
+
+    align-items: center;
+    padding: 10px;
   }
 
   .right-menu {
     width: 100%;
     height: 100%;
+    margin-top: 4vh;
   }
+
   .deneme_deneme li {
     width: 100%;
   }
 
   .deneme_deneme li:hover {
-    background-color: aqua;
+    background-color: rgba(1, 82, 22, 0.091);
+  }
+
+  .left-menu {
+    display: flex;
+    justify-content: flex-start;
+    /* Logoyu sola hizalar */
+    align-items: center;
+  }
+
+  .right-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+
+
+}
+
+
+@media screen and (max-width: 960px) {
+
+
+
+  .img_img-container {
+    height: 85px;
+    width: 150px;
+    object-fit: cover;
+  }
+
+  .deneme_deneme {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 2px solid orange;
   }
 
   .left-menü {
@@ -64,10 +215,23 @@
     justify-content: center;
     align-items: center;
   }
+
   .right-menu {
     display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    align-items: start;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
   }
+
+  .deneme_deneme li {
+    white-space: nowrap;
+    font-size: 14px;
+    /* İstediğiniz boyutu ayarlayabilirsiniz */
+  }
+
+  .img_logo {
+    display: flex;
+    align-items: center;
+  }
+
 }

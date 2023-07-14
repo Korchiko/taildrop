@@ -77,6 +77,9 @@ function App() {
 
 
         <Route path="/iletisim" Component={Contact}></Route>
+
+        
+
       </Routes>
     </div>
   );

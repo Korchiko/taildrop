@@ -17,7 +17,7 @@ import HastaSeven from "./Components/Hasta/Hasta7";
 
 
 
-import Tani from "./Components/Tani/Tani";
+import TaniOne from "./Components/Tani/Tani1";
 import TaniTwo from "./Components/Tani/Tani2";
 import TaniThree from "./Components/Tani/Tani3";
 import TaniFour from "./Components/Tani/Tani4";
@@ -65,7 +65,7 @@ function App() {
 
 
 
-        <Route path="/tani1" Component={Tani}></Route>
+        <Route path="/tani1" Component={TaniOne}></Route>
         <Route path="/tani2" Component={TaniTwo}></Route>
         <Route path="/tani3" Component={TaniThree}></Route>
         <Route path="/tani4" Component={TaniFour}></Route>

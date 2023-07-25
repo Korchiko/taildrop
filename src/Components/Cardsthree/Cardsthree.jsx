@@ -51,8 +51,8 @@ export default function Example() {
               <Button
                 variant="text"
                 className="flex items-center gap-2 text-green-900 font-extrabold"
-              >
-                Devamını Oku
+              ><a href="/hastalik5">
+                Devamını Oku</a>
                 <ArrowLongRightIcon strokeWidth={2} className="w-4 h-4" />
               </Button>
             </a>
@@ -94,8 +94,8 @@ export default function Example() {
               <Button
                 variant="text"
                 className="flex items-center gap-2 text-green-900 font-extrabold"
-              >
-                Devamını Oku
+              > <a href="/hastalik2">
+                Devamını Oku</a>
                 <ArrowLongRightIcon strokeWidth={2} className="w-4 h-4" />
               </Button>
             </a>

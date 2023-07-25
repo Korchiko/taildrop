@@ -4,21 +4,29 @@ const LINKS = [
   {
     title: "Hastalıklar",
     items: [
-      "Sarı Nokta Hastalığı",
-      "Diyabetik Retinopati",
-      "Retina Dekolmanı",
-      "Makuler Hole",
-      "Epiretinal Membran",
-
+      { title: "Diyabetik Retinopati", link: "/hastalik4" },
+      { title: "Sarı Nokta Hastalığı", link: "/hastalik1" },
+      { title: "Retina Dekormanı", link: "/hastalik2" },
+      { title: "Epiretinal Membran", link: "/hastalik5" },
+      { title: "Makuler Hole", link: "/hastalik3" },
     ],
   },
   {
     title: "Tedaviler",
-    items: ["Göz İçi İğne Uygulaması", "Intravitreal Enjeksiyon", "Smile Laser", ""],
+    items: [
+      { title: "Göz İçi İğne Uygulaması", link: "/tedavi1" },
+      { title: "Intravitreal Enjeksiyon", link: "/tedavi2" },
+      { title: "Smile Laser", link: "/smile-laser" },
+    ],
   },
   {
     title: "Tanı Yöntemleri",
-    items: ["Fundus Floresein Anjiografisi (FFA)", "İndosiyanin Anjiografisi (ICG)", "Optik Kohorens Tomografisi (OCT)", "Oftalmik Ultrasonografi (USG)"],
+    items: [
+      { title: "Fundus Floresein Anjiografisi (FFA)", link: "/tani1" },
+      { title: "İndosiyanin Anjiografisi (ICG)", link: "/tani2" },
+      { title: "Optik Kohorens Tomografisi (OCT)", link: "/tani3" },
+      { title: "Oftalmik Ultrasonografi (USG)", link: "/tani4" },
+    ],
   },
 ];
 
@@ -30,11 +38,9 @@ export default function Example() {
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <div className="flex flex-wrap justify-center items-center">
-            <div className="max-w-md mx-auto px-4">
-              <p className="text-green-800 font-bold mt-6 text-lg">
-                Hakkımızda
-              </p>
-              <p className="mt-6 max-w-xs sm:max-w-sm md:max-w-md  text-lg font-normal">
+            <div className="max-w-md mx-auto px-4 mb-40">
+              <p className="text-green-800 font-bold text-md">Hakkımızda</p>
+              <p className="pb-2 block mt-4 max-w-xs sm:max-w-sm md:max-w-md font-normal leading-relaxed font-sans text-gray-700">
                 Her daim hastaların ve hasta yakınlarının yanında duran güler
                 yüzlü, anlayışlı ve nitelikli profesyonel kadromuz ile sağlık
                 alanında farklı ve güvenilir hizmet anlayışını benimsiyoruz.
@@ -47,21 +53,23 @@ export default function Example() {
               <ul key={title}>
                 <Typography
                   variant="medium"
-                  className="mb-3 font-semibold text-green-800 "
+                  className="mb-3 font-semibold text-green-800"
                 >
                   {title}
                 </Typography>
-                {items.map((link) => (
-                  <li key={link}>
-                    <Typography
-                      as="a"
-                      href="#"
-                      color="gray"
-                      className="py-1.5 font-normal transition-colors hover:text-blue-gray-900"
-                    >
-                      {link}
-                    </Typography>
-                  </li>
+                {items.map(({ title: linkTitle, link }) => (
+                  link.trim() !== "" && (
+                    <li key={link}>
+                      <Typography
+                        as="a"
+                        href={link}
+                        color="gray"
+                        className="py-1.5 font-normal transition-colors hover:text-blue-gray-900"
+                      >
+                        {linkTitle}
+                      </Typography>
+                    </li>
+                  )
                 ))}
               </ul>
             ))}
@@ -72,10 +80,10 @@ export default function Example() {
             variant="small"
             className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
           >
-            &copy; {currentYear} <a href="">Sadun Yalçın</a>, Tüm Hakları
-            Saklıdır.
+            &copy; {currentYear} <a href="/profile">Sadun Yalçın</a>, Tüm
+            Hakları Saklıdır.
           </Typography>
-          <div className="flex gap-4 text-black sm:justify-center">
+          <div className="flex gap-6 text-black sm:justify-center  mr-16">
             <Typography
               as="a"
               href="#"
@@ -97,7 +105,7 @@ export default function Example() {
             <Typography
               as="a"
               href="#"
-              className="opacity-80 transition-opacity hover:opacity-100"
+              className="opacity-80 transition-opacity hover:opacity-100 "
             >
               <svg
                 className="h-5 w-5"
@@ -115,10 +123,10 @@ export default function Example() {
             <Typography
               as="a"
               href="#"
-              className="opacity-80 transition-opacity hover:opacity-100"
+              className="opacity-80 transition-opacity hover:opacity-100 "
             >
               <svg
-                className="h-5 w-5"
+                className="h-5 w-5 "
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -126,8 +134,6 @@ export default function Example() {
                 <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
               </svg>
             </Typography>
-           
-            
           </div>
         </div>
       </div>
